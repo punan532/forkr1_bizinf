@@ -1,0 +1,8 @@
+digraph C {
+graph [rankdir=TB, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.5];
+node [shape=record, style="filled", fontname="Times New Roman", fontsize=10, color="#2F5597", fillcolor="#F7FBFF"];
+edge [fontname="Times New Roman", fontsize=9, color="#555555"];
+app [label="{OrderCalculator|+ VAT_RATE: double = 10.0 \{вариант 1\}\l+ MIN_QUANTITY: int = 1\l+ MAX_QUANTITY: int = 10 000\l+ MAX_UNIT_PRICE: double = 5 000 000\l+ MIN_DISCOUNT: double = 0\l+ MAX_DISCOUNT: double = 30\l|+ main(String[])\l+ isValid(int, double, double): boolean\l+ validationError(int, double, double): String\l+ calculateBase(int, double): double\l+ applyDiscount(double, double): double\l+ calculateVat(double, double): double\l+ calculateTotal(int, double, double, double): double\l+ calculateTotal(int, double, double): double\l+ roundMoney(double): double\l+ formatRub(double): String\l+ processLine(String): String\l~ parseQuantity(String): int\l~ parseDecimal(String, String): double\l~ report(int, double, double, double): String\l- requirePercent(double, String)\l}"];
+sc [label="{SelfCheck|- failed: int\l|+ main(String[])\l- check(String, boolean)\l}"];
+sc -> app [label="«use»",style=dashed,arrowhead=open];
+}
